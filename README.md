@@ -1,4 +1,3 @@
-# Flow Matching Imitation Learning for Multi-Support Manipulation
+# From Images and Words to Contacts: LLM and VLM Driven Multi-Contact Placement for Humanoids
 
-https://hucebot.github.io/flow_multisupport_website
 
