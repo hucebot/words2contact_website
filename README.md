@@ -1,3 +1,2 @@
-# From Images and Words to Contacts: LLM and VLM Driven Multi-Contact Placement for Humanoids
-
-
+# Words2Contact: Identifying Support Contacts from Verbal Instructions Using Foundation Models
+![hucebot.github.io/words2contact_website/](https://hucebot.github.io/words2contact_website/)
