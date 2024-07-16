@@ -55,7 +55,7 @@
                   Mouret</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               </span>
               <span class="author-block">
-                Inria Nancy - Grand Est, CNRS, Université de Lorraine
+                Inria, CNRS, Université de Lorraine
                 <br>
               </span>
             </div>
@@ -190,68 +190,6 @@
     </div>
   </section>
   <!-- End paper abstract -->
-
-  <!-- Image carousel -->
-  <section class="hero is-small">
-    <div class="hero-body">
-      <h2 class="title is-3 has-text-centered">Words2Contact Overview and Modules</h2>
-      <div class="container">
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="item">
-            <!-- Your image here -->
-            <img src="resources/figures/pipeline_new-1.png" alt="MY ALT TEXT" />
-            <h2 class="subtitle has-text-justified">
-              <strong>Words2Contact</strong> overview: (1) The user provides the first instruction. The <strong>Module
-                Selector</strong> classifies it as “Prediction”. The <strong>Prediction Module</strong> integrates the
-              user input and the robot's RGB
-              data to predict a new contact point. (2) The user wants to adjust the predicted contact; their instruction
-              is classified
-              as “correction”. The <strong>Correction Module</strong> adjusts the previous prediction based on the new
-              user
-              input and the RGB data. (3) The user confirms the corrected contact location: the instruction is
-              classified as “Confirmation”. The <strong>Control Module</strong> uses the PointCloud, the initial user
-              prompt and the desired contact
-              location to compute the desired 3D contact task, later
-              executed by the SEIKO Multi-Contact whole-body controller.
-            </h2>
-          </div>
-          <div class="item">
-            <!-- Your image here -->
-            <img src="resources/figures/prediction_module-1.png" alt="MY ALT TEXT" />
-            <h2 class="subtitle has-text-justified">
-              The <strong>Prediction Module</strong>: the Prompt-Analyzer is an LLM that analyzes the user’s prompt and
-              returns
-              a JSON file with the chain of thought, list of objects, and position type (absolute or relative). For
-              absolute positions, a
-              point is extracted via language-grounded segmentation. For relative positions, a language-grounded object
-              detection VLM
-              detects bounding box(es), used by the LLM to predict the contact point.
-            </h2>
-          </div>
-          <div class="item">
-            <!-- Your image here -->
-            <img src="resources/figures/correction_module-1.png" alt="MY ALT TEXT" style="margin-left:25%" />
-            <h2 class="subtitle has-text-justified">
-              In the <strong>Correction Module</strong> (Sec. III-D) the LLM
-              detects object descriptions in the user prompt, the VLM
-              identifies their bounding boxes, and then uses them along
-              with the current target position, interaction history, and the
-              user’s instruction to determine a new candidate contact [i,j].
-            </h2>
-          </div>
-          <div class="item">
-            <!-- Your image here -->
-            <img src="resources/figures/control_module-1.png" alt="MY ALT TEXT" />
-            <h2 class="subtitle has-text-justified">
-              In the <strong>Control Module</strong>, the SEIKO
-              Controller commands the robot to realize the desired task
-              with the selected end-effector at the desired contact position
-            </h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
   <!-- End image carousel -->
   <footer class="footer">
     <div class="container">
@@ -261,8 +199,8 @@
 
             <p>
               This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
-                target="_blank">Academic Project Page Template</a> which was adopted from the <a
-                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
               You are free to borrow the of this website, we just ask that you link back to this page in the footer.
               <br> This website is licensed under a <a rel="license"
                 href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
