@@ -71,7 +71,8 @@
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/2407.14229" class="external-link button is-normal is-rounded is-dark is-size-5">
+                  <a href="https://arxiv.org/abs/2407.14229"
+                    class="external-link button is-normal is-rounded is-dark is-size-5">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
                     </span>
@@ -128,7 +129,10 @@
 
             <div class="publication-video">
               <!-- Youtube embed code here -->
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/txT25hUpBPQ?si=RHB9L1M5teN80ktf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/txT25hUpBPQ?si=RHB9L1M5teN80ktf"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
           </div>
         </div>
@@ -181,40 +185,407 @@
     </div>
   </section>
   <!-- End paper abstract -->
-  <!-- <div style="display: flex; justify-content: space-evenly;">
-    <div style="display: flex; flex-direction: column; align-items: center; justify-content: space-around;">
-      <video poster="" id="video2" autoplay="" controls="" muted="" loop="" style="width: 98%; ">
-        <source src="resources/videos/book_and_cup_compressed_.mp4" type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered" style="font-weight: bolder;">
-      </h2>
-    </div>
 
-    <div style="display: flex; flex-direction: column; align-items: center;">
-      <video poster="" id="video3" autoplay="" controls="" muted="" loop="" style="width: 98%;">
-        <source src="resources/videos/dishwasher_compressed_.mp4" type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered" style="font-weight: bolder;">
-      </h2>
-    </div>
-    <div style="display: flex; flex-direction: column; align-items: center;">
-      <video poster="" id="video4" autoplay="" controls="" muted="" loop="" style="width: 98%;">
-        <source src="resources/videos/hammer_toolbox_compressed_.mp4" type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered" style="font-weight: bolder;">
-      </h2>
-    </div>
 
-    <div style="display: flex; flex-direction: column; align-items: center;">
-      <video poster="" id="video5" autoplay="" controls="" muted="" loop="" style="width: 98%;">
-        <source src="resources/videos/snacks_compressed_.mp4" type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered" style="font-weight: bolder;">
-      </h2>
+  <!-- Prompts -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">System Prompts</h2>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item">
+            <!-- Your image here -->
+
+            <h2 class="subtitle has-text-centered module-selector">
+              Module Selector
+            </h2>
+            <div class="prompt">
+              <div class="system-prompt">
+                <p class="subtitle has-text-justified">
+                  System Prompt: <br>"You are a classification model. For a given a prompt, you must classify it into
+                  one
+                  of
+                  three categories: correction, prediction, or confirmation. Prediction will be about putting, placing,
+                  and
+                  reaching for objects with the hand. Correction will be about adjusting the position of objects.
+                  Confirmation will be about confirming the position of objects. Respond only using one word, from the
+                  categories prediction, correction, confirmation"
+                </p>
+              </div>
+              <div class="examples subtitle">
+                <p class="examples-text">
+                  Examples:
+                </p>
+                <p class="user">
+                  User: "Move 10 centimeters up and 7 centimeters to the left."
+                </p>
+                <p class="assistant">
+                  Response: "correction"
+                </p>
+
+                <p class="user">
+                  User: "Place your left hand at the middle left of the cup, and then reach for the keyboard."
+                </p>
+                <p class="assistant">
+                  Response: "prediction"
+                </p>
+
+                <p class="user">
+                  User: "Proceed."
+                </p>
+                <p class="assistant">
+                  Response: "confirmation"
+                </p>
+                <p class="user">
+                  User: "Move 10 units up."
+                </p>
+                <p class="assistant">
+                  Response: "correction"
+                </p>
+
+                <p class="user">
+                  User: "Place your right hand between the plate and the cup and then push the red button."
+                </p>
+                <p class="assistant">
+                  Response: "prediction"
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <!-- Your image here -->
+
+            <h2 class="subtitle has-text-centered module-selector">
+              Prompt Analyzer
+            </h2>
+            <div class="prompt">
+              <div class="system-prompt">
+                <p class="subtitle has-text-justified">
+                  System Prompt: <br>"Please generate JSON output that identifies whether an instruction pertains to a
+                  specific placement on an object or a position relative to an object. Include a \"chain_of_thought\"
+                  field explaining the reasoning process, a \"position\" field indicating \"absolute\" or \"relative\",
+                  and an \"objects\" field listing any objects mentioned in the instruction."
+                </p>
+              </div>
+              <div class="examples subtitle">
+                <p class="examples-text">
+                  Examples:
+                </p>
+                <p class="user">
+                  User: "Put your hand left from the aluminum tube."
+                </p>
+                <p class="assistant">
+                  Response: "{\"chain_of_thought\": \"The instruction 'Put your hand left from the aluminum tube'
+                  specifies an action relative to the position of an object, the aluminum tube. The position is
+                  determined based on the spatial relationship to the tube, not a specific location on the tube
+                  itself.\", \"position\": \"relative\", \"objects\": [\"aluminum tube\"]}"
+                </p>
+
+                <p class="user">
+                  User: "Place your hand on top of the book."
+                </p>
+                <p class="assistant">
+                  Response: "{\"chain_of_thought\": \"The instruction 'Place your hand on top of the book' specifies a
+                  precise location on a specific object, the book. This action directs placing the hand directly on the
+                  book's surface, which is an absolute position.\", \"position\": \"absolute\", \"objects\":
+                  [\"book\"]}"
+                </p>
+
+                <p class="user">
+                  User: "Place your hand inside the table."
+                </p>
+                <p class="assistant">
+                  Response: "{\"chain_of_thought\": \"The instruction 'Place your hand inside the table' specifies a
+                  precise location within a specific object, the table. This action directs placing the hand inside the
+                  table, which is an absolute position.\", \"position\": \"absolute\", \"objects\": [\"table\"]}"
+                </p>
+
+                <p class="user">
+                  User: "Lean on top of the desk."
+                </p>
+                <p class="assistant">
+                  Response: "{\"chain_of_thought\": \"The instruction 'Lean on top of the desk' specifies a precise
+                  location on a specific object, the desk. This action directs leaning on the top surface of the desk,
+                  which is an absolute position.\", \"position\": \"absolute\", \"objects\": [\"desk\"]}"
+                </p>
+
+                <p class="user">
+                  User: "Place your hand on the table between the blue and the black box."
+                </p>
+                <p class="assistant">
+                  Response: "{\"chain_of_thought\": \"The instruction 'Place your hand on the table between the blue and
+                  the black box' specifies a location that depends on the positions of the blue and black box. Since the
+                  location is defined in relation to other objects, it is a relative position.\", \"position\":
+                  \"relative\", \"objects\": [\"table\", \"blue box\", \"black box\"]}"
+                </p>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="item">
+            <!-- Your image here -->
+
+            <h2 class="subtitle has-text-centered module-selector">
+              Object in Prompt Detector
+            </h2>
+            <div class="prompt">
+              <div class="system-prompt">
+                <p class="subtitle has-text-justified">
+                  System Prompt: <br>"You are a JSON generator. The user will give you an instruction that may
+                  possibly be related to some objects. Your goal is to detect these objects in the prompt (even if
+                  they are indirectly implied) and then return a JSON object where you explain your thought process
+                  and provide a list of the objects in the prompt. Ensure that objects are accurately described and
+                  contextualized, including relevant textures and colors. Do not include terms referring to placement,
+                  such as body parts or general locations, in the list of objects. If there are no objects in the
+                  sentence, the objects field should be empty. Strictly follow the following template:<br>{<br>
+                  \"thought_process\": \"\",<br> \"objects\": []<br>}"
+                </p>
+              </div>
+              <div class="examples subtitle">
+                <p class="examples-text">
+                  Examples:
+                </p>
+                <p class="user">
+                  User: "Place your foot next to the drain cover."
+                </p>
+                <p class="assistant">
+                  Response: "{\"thought_process\": \"The instruction implies the presence of a drain cover, as it
+                  mentions placing the foot next to it. Since the prompt instructs not to include body parts and/or
+                  targets in the list of objects, the detected object is only 'drain cover'.\", \"objects\": [\"drain
+                  cover\"]}"
+                </p>
+
+                <p class="user">
+                  User: "Place your right hand between the door handle and the keyboard that is blue."
+                </p>
+                <p class="assistant">
+                  Response: "{\"thought_process\": \"The instruction implies the presence of a door handle and a
+                  keyboard that is blue, as it mentions placing something between them. Since the prompt instructs not
+                  to include hands in the list of objects, the detected objects are 'door handle' and 'blue
+                  keyboard'.\", \"objects\": [\"door handle\", \"blue keyboard\"]}"
+                </p>
+
+                <p class="user">
+                  User: "Can you please reach for the bottle of water that is next to the computer?"
+                </p>
+                <p class="assistant">
+                  Response: "{\"thought_process\": \"The instruction implies the presence of a bottle of water and a
+                  computer, as it mentions reaching for something next to the computer. Therefore, the detected
+                  objects are 'bottle of water' and 'computer'.\", \"objects\": [\"bottle of water\", \"computer\"]}"
+                </p>
+
+                <p class="user">
+                  User: "Place your right hand on the chair seat."
+                </p>
+                <p class="assistant">
+                  Response: "{\"thought_process\": \"The instruction implies the presence of a chair seat, as it
+                  mentions reaching for placing my hand on it.\", \"objects\": [\"chair seat\"]}"
+                </p>
+
+                <p class="user">
+                  User: "Place your left hand on the dark gray box."
+                </p>
+                <p class="assistant">
+                  Response: "{\"thought_process\": \"The instruction implies the presence of a dark gray box, as it
+                  mentions reaching for placing my hand on it.\", \"objects\": [\"dark gray box\"]}"
+                </p>
+              </div>
+            </div>
+
+
+            <!-- Your image here -->
+
+            <h2 class="subtitle has-text-centered">
+              Second image description.
+            </h2>
+          </div>
+          <div class="item">
+            <!-- Your image here -->
+
+            <h2 class="subtitle has-text-centered module-selector">
+              Relative Position Predictor
+            </h2>
+            <div class="prompt">
+              <div class="system-prompt">
+                <p class="subtitle has-text-justified">
+                  System Prompt: <br>"Generate detailed JSON responses to accurately position targets within a scene
+                  relative to user-provided object positions, dimensions, and relative position instructions. Define
+                  precise mathematical equations for calculating boundaries based on the specified center (x, y) and
+                  dimensions (width x height) of referenced objects. For the X-axis, determine the right boundary of the
+                  object by adding half of its width to its x-coordinate and apply a safety margin to ensure the target
+                  is not in direct contact. Adjust the margin based on the relative position instruction (e.g., 'right
+                  from the cup'). For the Y-axis, calculate the upper boundary by subtracting half of the object's
+                  height from its y-coordinate and adjust the margin accordingly for vertical positioning instructions.
+                  Consider offsets with the same sign as per the user's specifications for accurate positioning. Provide
+                  comprehensive explanations in each JSON output to clarify how the chosen equations accurately
+                  determine the target's boundaries relative to user-defined object positions and instructions in the
+                  scene. Response Format: The system must always reply using the specific JSON template:
+                  {\"chain_of_thought\": \"\", \"math_expression_x\": \"\", \"math_expression_y\": \"\"}"
+                </p>
+              </div>
+              <div class="examples subtitle">
+                <p class="examples-text">
+                  Examples:
+                </p>
+                <p class="user">
+                  User: "A chair is located at (200, 300) and has dimensions 50x50. Place your hand a bit to the right
+                  from the chair."
+                </p>
+                <p class="assistant">
+                  Response: "{\"chain_of_thought\": \"To position the hand to the right of the chair located at (200,
+                  300) with dimensions 50x50, calculate the target position relative to the chair's center. Moving right
+                  on the x-axis is positive, so add(+) half of the chair's width and then a displacement to determine
+                  the target's x-coordinate, since we want to be a bit to the right, we will add(+) a marginal value.
+                  The y-coordinate remains aligned with the chair's center for vertical consistency.\",
+                  \"math_expression_x\": \"200 + 50 / 2 + 20\", \"math_expression_y\": \"300\"}"
+                </p>
+
+                <p class="user">
+                  User: "A chair is located at (200, 300) and has dimensions 50x50. Place a contact left from the
+                  chair."
+                </p>
+                <p class="assistant">
+                  Response: "{\"chain_of_thought\": \"To position the contact to the left of the chair located at (200,
+                  300) with dimensions 50x50, calculate the target position relative to the chair's center. Moving left
+                  on the x-axis is negative, so subtract(-) half of the chair's width and then subtract a value(-) that
+                  makes sense based on the width of the chair. The y-coordinate remains aligned with the chair's center
+                  for vertical consistency.\", \"math_expression_x\": \"200 - 50 / 2 - 50 / 2\", \"math_expression_y\":
+                  \"300\"}"
+                </p>
+
+                <p class="user">
+                  User: "A sofa is located at (100, 150) and has dimensions 100x50. The target is located a lot below
+                  the sofa."
+                </p>
+                <p class="assistant">
+                  Response: "{\"chain_of_thought\": \"To position the target significantly below the sofa located at
+                  (100, 150) with dimensions 100x50, calculate the target position relative to the sofa's center. Moving
+                  below on the y-axis is negative, so subtract(-) more than half of the sofa's height to position the
+                  target a notable distance below. The x-coordinate remains aligned with the sofa's center for
+                  horizontal consistency.\", \"math_expression_x\": \"100\", \"math_expression_y\": \"150 - 50 / 2 -
+                  30\"}"
+                </p>
+
+                <p class="user">
+                  User: "A desk is located at (500, 400) and has dimensions 80x80. A monitor is located at (600, 450)
+                  and has dimensions 50x50. Place a target between the desk and the monitor."
+                </p>
+                <p class="assistant">
+                  Response: "{\"chain_of_thought\": \"To place the target between the desk located at (500, 400) with
+                  dimensions 80x80 and the monitor located at (600, 450) with dimensions 50x50, calculate the target
+                  position relative to the centers of both objects. Moving between the objects horizontally on the
+                  x-axis involves finding the midpoint between their centers. Vertically, ensure the target is centered
+                  between their heights.\", \"math_expression_x\": \"(500 + (80 / 2) + 600 - (50 / 2)) / 2\",
+                  \"math_expression_y\": \"(400 + (80 / 2) + 450 - (50 / 2)) / 2\"}"
+                </p>
+
+                <p class="user">
+                  User: "Plastic bag located at [937, 480] with dimensions 318x191. The target is below the middle of
+                  the plastic bag."
+                </p>
+                <p class="assistant">
+                  Response: "{\"chain_of_thought\": \"To position the target below the plastic bag located at [937, 480]
+                  with dimensions 318x191 in the middle, calculate the target position relative to the plastic bag's
+                  center. Moving below on the y-axis is negative, so subtract(-) half of the plastic bag's height to
+                  position the target centrally below. The x-coordinate remains aligned with the plastic bag's center
+                  for horizontal consistency.\", \"math_expression_x\": \"937\", \"math_expression_y\": \"480 - 191 /
+                  2\"}"
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <!-- Your image here -->
+
+            <h2 class="subtitle has-text-centered module-selector">
+              Relative Position Predictor (Corrections)
+            </h2>
+            <div class="prompt">
+              <div class="system-prompt">
+                <p class="subtitle has-text-justified">
+                  System Prompt: <br>"Generate detailed JSON responses to accurately correct target placement within a
+                  1280x720 scene based on initial target position, relevant object information (if provided), and user
+                  instructions for movement relative to these objects. Define precise mathematical equations for
+                  adjusting the target's position, considering boundaries and safety margins. Ensure corrections are
+                  within scene boundaries and provide comprehensive explanations in each JSON output to clarify how the
+                  chosen equations accurately adjust the target's position relative to the provided instructions. Don't
+                  forget up means positive translation on the y axis (+), down negative translation on the y axis (-),
+                  right positive translation on the x axis (+), and left negative translation on the x axis(-). Response
+                  Format: The system must always reply using the specific JSON template: {\"chain_of_thought\": \"\",
+                  \"math_expression_x\": \"\", \"math_expression_y\": \"\"}"
+                </p>
+              </div>
+              <div class="examples subtitle">
+                <p class="examples-text">
+                  Examples:
+                </p>
+                <p class="user">
+                  User: "Target is at (400, 300). A chair is located at (600, 300) with dimensions 100x50. Move the
+                  target closer to the object."
+                </p>
+                <p class="assistant">
+                  Response: "{\"chain_of_thought\": \"The initial target position is (400, 300) and the chair is
+                  positioned at (600, 300) with dimensions 100x50. The chair's x-boundaries are from 550 to 650 and
+                  y-boundaries are from 275 to 325, considering its center and dimensions. To move the target closer,
+                  calculate the x-distance to the closest edge of the chair: 550 - 400 = 150. Since the y-coordinates
+                  are aligned and within boundaries, no y-movement is needed. Assuming a small margin for 'a bit'
+                  closer, move x by a small positive distance (e.g., 10 units assumed).\", \"math_expression_x\": \"400
+                  + 10\", \"math_expression_y\": \"300\"}"
+                </p>
+
+                <p class="user">
+                  User: "Target is at (500, 500). A bottle is located at (500, 600) with dimensions 100x50. Move the
+                  target away from the bottle."
+                </p>
+                <p class="assistant">
+                  Response: "{\"chain_of_thought\": \"The initial target position is (500, 500) and the bottle is
+                  positioned at (500, 600) with dimensions 100x50. The bottle's y-boundaries are from 575 to 625, and
+                  x-boundaries are from 450 to 550. To move the target away, calculate the y-distance to the closest
+                  edge of the bottle: 575 - 500 = 75. Assuming a small margin for 'a bit' away, move y by a small
+                  negative distance (e.g., 10 units assumed).\", \"math_expression_x\": \"500\", \"math_expression_y\":
+                  \"500 - 10\"}"
+                </p>
+
+                <p class="user">
+                  User: "Target is at (300, 300). Move a bit to the right."
+                </p>
+                <p class="assistant">
+                  Response: "{\"chain_of_thought\": \"The initial target position is (300, 300). To move the target to
+                  the right, translate the x-coordinate positively. Assuming a small translation of 30 units.\",
+                  \"math_expression_x\": \"300 + 30\", \"math_expression_y\": \"300\"}"
+                </p>
+
+                <p class="user">
+                  User: "Target is at (400, 400). Move the target up."
+                </p>
+                <p class="assistant">
+                  Response: "{\"chain_of_thought\": \"The initial target position is (400, 400). To move the target up,
+                  translate the y-coordinate positively. Assuming a small translation of 30 units.\",
+                  \"math_expression_x\": \"400\", \"math_expression_y\": \"400 + 30\"}"
+                </p>
+
+                <p class="user">
+                  User: "Target is at (400, 400). Move the target down."
+                </p>
+                <p class="assistant">
+                  Response: "{\"chain_of_thought\": \"The initial target position is (400, 400). To move the target
+                  down, translate the y-coordinate negatively. Assuming a small translation of 30 units.\",
+                  \"math_expression_x\": \"400\", \"math_expression_y\": \"400 - 30\"}"
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
-  </div> -->
+  </section>
+
+
+
   <!--BibTex citation -->
-  <section class="section" id="BibTeX (Preprint)">
+  <section class="section hero is-light" id="BibTeX (Preprint)">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code>
@@ -233,7 +604,7 @@
   </section>
   <!--End BibTex citation -->
 
-  <!-- End image carousel -->
+
   <footer class="footer">
     <div class="container">
       <div class="columns is-centered">
