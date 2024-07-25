@@ -55,7 +55,7 @@
                   Mouret</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               </span>
               <span class="author-block">
-                Inria Nancy - Grand Est, CNRS, Université de Lorraine
+                Inria, CNRS, Université de Lorraine
                 <br>
               </span>
             </div>
@@ -70,35 +70,35 @@
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="#" class="external-link button is-normal is-rounded is-dark is-size-5">
+                  <a href="https://arxiv.org/abs/2407.14229" class="external-link button is-normal is-rounded is-dark is-size-5">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
                     </span>
                     <span>ArXiv</span>
                   </a>
                 </span>
-                <span class="link-block">
+                <!-- <span class="link-block">
                   <a href="#" class="external-link button is-normal is-rounded is-dark is-size-5">
                     <span class="icon">
                       <i class="ai ai-hal"></i>
                     </span>
                     <span>HAL</span>
                   </a>
-                </span>
-                <span class="link-block">
+                </span> -->
+                <!-- <span class="link-block">
                   <a href="#" class="external-link button is-normal is-rounded is-dark is-size-5">
                     <span class="icon">
                       <i class="fab fa-youtube"></i>
                     </span>
                     <span>Video</span>
                   </a>
-                </span>
+                </span> -->
                 <span class="link-block">
                   <a href="#" class="external-link button is-normal is-rounded is-dark is-size-5">
                     <span class="icon">
                       <i class="fa fa-table"></i>
                     </span>
-                    <span>Dataset</span>
+                    <span>Dataset (available soon)</span>
                   </a>
                 </span>
                 <span class="link-block">
@@ -106,7 +106,7 @@
                     <span class="icon">
                       <i class="fa-brands fa-github"></i>
                     </span>
-                    <span>Code</span>
+                    <span>Code (available soon)</span>
                   </a>
                 </span>
               </div>
@@ -116,7 +116,71 @@
 
 
   </section>
-  <div style="display: flex; justify-content: space-evenly;">
+  <!-- Youtube video -->
+  <section class="hero is-small ">
+    <div class="hero-body">
+      <div class="container">
+        <!-- Paper video. -->
+        <!-- <h2 class="title is-3">Video Presentation</h2> -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+
+            <div class="publication-video">
+              <!-- Youtube embed code here -->
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/txT25hUpBPQ?si=RHB9L1M5teN80ktf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End youtube video -->
+
+  </section>
+
+
+
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <!-- Your image here -->
+
+            <p>
+              This paper presents Words2Contact, a language-
+              guided multi-contact placement pipeline leveraging large
+              language models and vision language models. Our method
+              is a key component for language-assisted teleoperation and
+              human-robot cooperation, where human operators can instruct
+              the robots where to place their support contacts before
+              whole-body reaching or manipulation using natural language.
+              Words2Contact transforms the verbal instructions of a human
+              operator into contact placement predictions; it also deals with
+              iterative corrections, until the human is satisfied with the contact
+              location identified in the robot’s field of view. We benchmark
+              state-of-the-art LLMs and VLMs for size and performance
+              in contact prediction. We demonstrate the effectiveness of the
+              iterative correction process, showing that users, even naive,
+              quickly learn how to instruct the system to obtain accurate
+              locations. Finally, we validate Words2Contact in real-world
+              experiments with the Talos humanoid robot, instructed by
+              human operators to place support contacts on different locations
+              and surfaces to avoid falling when reaching for distant objects.
+
+            </p>
+            <img src="resources/figures/concept_fig_no_bg.png" style="width:50%; margin-left:30%; margin-bottom: 0;" />
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+  <!-- <div style="display: flex; justify-content: space-evenly;">
     <div style="display: flex; flex-direction: column; align-items: center; justify-content: space-around;">
       <video poster="" id="video2" autoplay="" controls="" muted="" loop="" style="width: 98%; ">
         <source src="resources/videos/book_and_cup_compressed_.mp4" type="video/mp4">
@@ -147,92 +211,8 @@
       <h2 class="subtitle has-text-centered" style="font-weight: bolder;">
       </h2>
     </div>
-  </div>
+  </div> -->
 
-  </section>
-
-  <!-- Paper abstract -->
-  <section class="section hero is-light">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Abstract</h2>
-          <div class="content has-text-justified">
-            <!-- Your image here -->
-
-            <p>
-              This paper presents Words2Contact, a language-guided multi-contact placement pipeline integrating
-              large language models and vision language models. Our method is a key component for language-assisted
-              teleoperation and human-robot cooperation, where human operators can instruct the robots where to
-              place their support contacts before whole-body reaching or manipulation.
-              Words2Contact transforms the verbal instructions of a human operator into contact placement
-              prediction; it also deals with iterative corrections, until the human is satisfied with the contact
-              location identified in the robot's field of view.
-              We benchmark state-of-the-art LLMs and VLMs for size and performance in contact prediction. We
-              demonstrate the effectiveness of the iterative correction process, showing that users, even naive,
-              quickly learn how to instruct the system to obtain accurate locations.
-              Finally, we validate Words2Contact in real-world experiments with the Talos humanoid robot, instructed
-              by human operators to place support contacts on different locations and surfaces to avoid falling when
-              reaching for distant objects.
-
-            </p>
-            <img src="resources/figures/minimal_concept_figure2-1.png" style="width:50%; margin-left:30%" />
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End paper abstract -->
-
-  <!-- Image carousel -->
-  <section class="hero is-small">
-    <div class="hero-body">
-      <div class="container">
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="item">
-            <!-- Your image here -->
-            <img src="resources/figures/pipeline_new-1.png" alt="MY ALT TEXT" />
-            <h2 class="subtitle has-text-centered">
-              Words2Contact Pipeline: The classification of the prompt (Prediction, Correction, or Confirmation)
-              activates the appropriate module. The Prediction module (top) uses user input and visual feedback to
-              predict new points. The Correction module (middle) adjusts placement based on user input, visual feedback,
-              and previous points. The Confirmation module (bottom) commands the robot to place the contact at the
-              specified point..
-            </h2>
-          </div>
-          <div class="item">
-            <!-- Your image here -->
-            <img src="resources/figures/prediction_module-1.png" alt="MY ALT TEXT" />
-            <h2 class="subtitle has-text-centered">
-              The prediction module uses the LLM to analyze the user's prompt and return a JSON file with the chain of
-              thought, list of objects, and position type (absolute or relative). For absolute positions, a point is
-              extracted via language-grounded segmentation. For relative positions, bounding boxes are detected, and the
-              LLM calculates the 2D target position.
-            </h2>
-          </div>
-          <div class="item">
-            <!-- Your image here -->
-            <img src="resources/figures/correction_module-1.png" alt="MY ALT TEXT" style="margin-left:25%" />
-            <h2 class="subtitle has-text-centered">
-              In the Correction module the LLM detects object descriptions in the prompt, the VLM identifies their
-              bounding boxes, and then the LLM, uses this information, along with the current position and the user's
-              instruction, to update the position.
-            </h2>
-          </div>
-          <div class="item">
-            <!-- Your image here -->
-            <img src="resources/figures/control_module-1.png" alt="MY ALT TEXT" />
-            <h2 class="subtitle has-text-centered">
-              The control module identifies the end-effector
-              that should be used, and the task's type then the robot is controlled through SEIKO Retargeting and
-              Control.
-            </h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
   <!-- End image carousel -->
   <footer class="footer">
     <div class="container">
@@ -242,8 +222,8 @@
 
             <p>
               This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
-                target="_blank">Academic Project Page Template</a> which was adopted from the <a
-                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
               You are free to borrow the of this website, we just ask that you link back to this page in the footer.
               <br> This website is licensed under a <a rel="license"
                 href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
@@ -260,6 +240,11 @@
             <img src="./resources/logos/logo_eurobin.png" width="15%" style="margin:1%"></img>
             <img src="./resources/logos/logo_eu.png" width="15%" style="margin:1%"></img>
           </span>
+          <p>
+            This research was supported by the CPER CyberEntreprises, the Creativ’Lab platform of Inria/LORIA, the EU
+            Horizon project euROBIN (GA n.101070596), the France 2030 program through the PEPR O2R projects AS3 and PI3
+            (ANR-22-EXOD-007, ANR-22-EXOD-004)
+          </p>
         </div>
       </div>
     </div>
